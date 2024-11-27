@@ -1,31 +1,32 @@
-# Compiler
-# Compiler
-CC = gcc
+SRC := src
+OBJ := obj
+BIN := bin
+EXECUTABLE:= filesys
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -g
+SRCS := $(wildcard $(SRC)/*.c)
+OBJS := $(patsubst $(SRC)/%.c,$(OBJ)/%.o,$(SRCS))
+INCS := -Iinclude/
+DIRS := $(OBJ)/ $(BIN)/
+EXEC := $(BIN)/$(EXECUTABLE)
 
-# Executable name
-TARGET = filesys
+CC := gcc
+CFLAGS := -g -Wall -std=c99 $(INCS)
+LDFLAGS :=
 
-# Source directory
-SRC_DIR = src
+all: $(EXEC)
 
-# Source file
-SRC = $(SRC_DIR)/mount.c
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(EXEC)
 
-# Build target
-all: $(TARGET)
+$(OBJ)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+run: $(EXEC)
+	$(EXEC)
 
-# Clean target to remove the executable and other temporary files
 clean:
-	rm -f $(TARGET)
+	rm $(OBJ)/*.o $(EXEC)
 
-# Run the program (optional convenience target)
-run: $(TARGET)
-	./$(TARGET) <argument>
+$(shell mkdir -p $(DIRS))
 
-.PHONY: all clean run
+.PHONY: run clean all
