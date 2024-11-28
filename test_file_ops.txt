@@ -1,0 +1,8 @@
+cd testdir
+open testfile -rw
+write testfile "Hello, FAT32!"
+lseek testfile 0
+read testfile 20
+size testfile
+close testfile
+exit

@@ -1,0 +1,7 @@
+creat oldname
+ls
+rename oldname newname
+ls
+rm newname
+ls
+exit
