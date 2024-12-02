@@ -1,6 +1,6 @@
 # Project 3 - FAT32 File System 
 
-description
+This project involves developing a user-space shell utility that interprets and manipulates FAT32 file system images. The utility allows users to mount an image file and interact with it through a set of commands similar to those in a typical shell environment. Users can navigate directories, list contents, create and delete files and directories, open and close files, read from and write to files, and manage file offsets - all within the FAT32 image. The program emphasizes robust error handling and maintains the integrity of the file system image throughout its operations, ensuring it remains uncorrupted even when faced with erroneous commands.
 
 ## Group Members
 - **Julian Schumacher**: jgs21h@fsu.edu
@@ -33,12 +33,8 @@ description
 - **Responsibilities**: 
 - **Assigned to**: Juan Dangon
 
-### Extra Credit
-- **Responsibilities**: 
-- **Assigned to**: Julian Schumacher, Nicholas Miller, Juan Dangon
-
 ## File Listing
-```
+```shell
 .gitignore
 src/
 	commands.rs
@@ -58,3 +54,14 @@ cargo.toml
 Makefile
 README.md
 ```
+
+## How to Compile and Execute
+
+### Requirements
+- **Compiler**: `rustc`
+
+### Compilation and Execution
+```shell
+make
+```
+This will build an executable called `filesys` in the `/target/release/` directory. This command also executes the program, passing `fat32.img` as a parameter automatically. This assumes that the `fat32.img` file is already present in the root directory (in the same directory as the Makefile)
