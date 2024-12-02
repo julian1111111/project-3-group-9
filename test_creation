@@ -1,6 +1,6 @@
 mkdir testdir
 ls
-cd testdir
+cd TESTDIR
 creat testfile
 ls
 exit
