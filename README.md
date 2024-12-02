@@ -39,10 +39,22 @@ description
 
 ## File Listing
 ```
+.gitignore
+src/
+	commands.rs
+	fat32.rs
+	main.rs
+	open_files.rs
+	shell.rs
+tests/
+	test_basic.txt
+	test_creation.txt
+	test_deletion.txt
+	test_errors.txt
+	test_file_ops.txt
+	test_rename.txt
 Cargo.lock
 cargo.toml
-src/
-
 Makefile
 README.md
 ```
