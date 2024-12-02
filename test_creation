@@ -1,6 +1,0 @@
-mkdir testdir
-ls
-cd TESTDIR
-creat testfile
-ls
-exit

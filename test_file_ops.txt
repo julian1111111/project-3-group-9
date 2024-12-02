@@ -1,8 +1,0 @@
-cd TESTDIR
-open TESTFILE -rw
-write TESTFILE "Hello, FAT32!"
-lseek TESTFILE 0
-read TESTFILE 20
-size TESTFILE
-close TESTFILE
-exit

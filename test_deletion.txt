@@ -1,9 +1,0 @@
-cd testdir
-creat tempfile
-ls
-rm tempfile
-ls
-cd ..
-rmdir testdir
-ls
-exit
