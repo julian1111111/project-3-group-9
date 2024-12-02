@@ -448,6 +448,7 @@ pub fn rmdir(
     fat32: &mut FAT32,
     current_dir_cluster: u32,
     dirname: &str,
+    #[allow(unused_variables)]
     open_files: &OpenFiles,
 ) -> io::Result<()> {
     // Cannot remove '.' or '..'
