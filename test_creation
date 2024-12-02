@@ -1,0 +1,6 @@
+mkdir testdir
+ls
+cd testdir
+creat testfile
+ls
+exit
