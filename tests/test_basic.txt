@@ -1,0 +1,6 @@
+info
+ls
+cd subdir
+ls
+cd ..
+exit
